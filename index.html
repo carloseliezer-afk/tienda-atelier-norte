@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelier Norte | Tienda de Ropa</title>
+  <meta name="description" content="Tienda de ropa moderna con colecciones destacadas, filtros por categoria y carrito funcional.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <nav class="topbar">
+        <div>
+          <p class="eyebrow">Nueva temporada 2026</p>
+          <a class="brand" href="#inicio">Atelier Norte</a>
+        </div>
+        <div class="topbar-actions">
+          <a href="#catalogo">Catalogo</a>
+          <a href="#colecciones">Colecciones</a>
+          <a href="#nosotros">Nosotros</a>
+          <button id="cart-toggle" class="cart-button" type="button" aria-label="Abrir carrito">
+            Carrito
+            <span id="cart-count">0</span>
+          </button>
+        </div>
+      </nav>
+
+      <section id="inicio" class="hero-content">
+        <div class="hero-copy">
+          <p class="eyebrow">Diseno urbano y elegante</p>
+          <h1>Ropa con presencia, comodidad y estilo para todos los dias.</h1>
+          <p class="hero-text">
+            Descubre prendas cuidadosamente seleccionadas para mujer, hombre y unisex.
+            Compra por categoria, filtra por estilo y arma tu carrito en segundos.
+          </p>
+          <div class="hero-cta">
+            <a class="primary-button" href="#catalogo">Comprar ahora</a>
+            <a class="secondary-button" href="#colecciones">Ver colecciones</a>
+          </div>
+          <ul class="hero-stats">
+            <li><strong>+120</strong><span>Prendas seleccionadas</span></li>
+            <li><strong>Envio 24h</strong><span>En ciudades principales</span></li>
+            <li><strong>Pago seguro</strong><span>Experiencia simple</span></li>
+          </ul>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-badge">Top ventas</div>
+          <h2>Look Esencial</h2>
+          <p>Chaqueta ligera, camiseta premium y pantalon relaxed fit.</p>
+          <div class="hero-card-price">$129.99</div>
+          <div class="hero-card-grid">
+            <article>
+              <span>Material</span>
+              <strong>Algodon organico</strong>
+            </article>
+            <article>
+              <span>Tonos</span>
+              <strong>Terracota y arena</strong>
+            </article>
+            <article>
+              <span>Ajuste</span>
+              <strong>Regular fit</strong>
+            </article>
+            <article>
+              <span>Ideal para</span>
+              <strong>Oficina y ciudad</strong>
+            </article>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section id="colecciones" class="collections section">
+        <div class="section-heading">
+          <p class="eyebrow">Colecciones destacadas</p>
+          <h2>Una tienda pensada para lucir bien en cualquier ocasion.</h2>
+        </div>
+        <div class="collection-grid">
+          <article class="collection-card collection-card-highlight">
+            <span class="pill">Urbano</span>
+            <h3>Street Layers</h3>
+            <p>Prendas amplias, texturas suaves y tonos solidos para un look actual.</p>
+          </article>
+          <article class="collection-card">
+            <span class="pill">Formal</span>
+            <h3>Office Edit</h3>
+            <p>Camisas, blazers y pantalones con cortes limpios y acabados premium.</p>
+          </article>
+          <article class="collection-card">
+            <span class="pill">Casual</span>
+            <h3>Weekend Soft</h3>
+            <p>Sudaderas, joggers y camisetas para moverte comodo todo el dia.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="catalogo" class="catalog section">
+        <div class="section-heading">
+          <p class="eyebrow">Catalogo interactivo</p>
+          <h2>Explora la tienda y agrega tus prendas favoritas al carrito.</h2>
+        </div>
+
+        <div class="toolbar">
+          <label class="search-box">
+            <span>Buscar</span>
+            <input id="search-input" type="search" placeholder="Ej. blazer, vestido, hoodie">
+          </label>
+          <label>
+            <span>Categoria</span>
+            <select id="category-filter">
+              <option value="all">Todas</option>
+              <option value="Mujer">Mujer</option>
+              <option value="Hombre">Hombre</option>
+              <option value="Unisex">Unisex</option>
+            </select>
+          </label>
+          <label>
+            <span>Estilo</span>
+            <select id="style-filter">
+              <option value="all">Todos</option>
+              <option value="Casual">Casual</option>
+              <option value="Formal">Formal</option>
+              <option value="Urbano">Urbano</option>
+              <option value="Deportivo">Deportivo</option>
+            </select>
+          </label>
+          <label>
+            <span>Ordenar</span>
+            <select id="sort-filter">
+              <option value="featured">Destacados</option>
+              <option value="low">Precio: menor a mayor</option>
+              <option value="high">Precio: mayor a menor</option>
+              <option value="name">Nombre A-Z</option>
+            </select>
+          </label>
+        </div>
+
+        <div id="products-grid" class="products-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="benefits section">
+        <article>
+          <h3>Calidad premium</h3>
+          <p>Telas seleccionadas para mayor durabilidad, caida y confort.</p>
+        </article>
+        <article>
+          <h3>Cambios faciles</h3>
+          <p>Proceso simple para cambios de talla dentro de los primeros 15 dias.</p>
+        </article>
+        <article>
+          <h3>Pago flexible</h3>
+          <p>Interfaz preparada para integrar pasarelas de pago en futuros pasos.</p>
+        </article>
+      </section>
+
+      <section id="nosotros" class="about section">
+        <div class="section-heading">
+          <p class="eyebrow">Nuestra esencia</p>
+          <h2>Nos inspiramos en la energia de la ciudad, la elegancia diaria y la libertad de vestir con personalidad.</h2>
+        </div>
+        <div class="about-layout">
+          <div>
+            <p>
+              Atelier Norte nace de la idea de combinar prendas versatiles con una estetica contemporanea,
+              pensada para personas que quieren verse bien sin dejar de sentirse comodas en su rutina diaria.
+            </p>
+            <p>
+              Cada coleccion busca transmitir confianza, frescura y autenticidad, mezclando cortes modernos,
+              tonos faciles de combinar y una vision urbana que funciona tanto de dia como de noche.
+            </p>
+          </div>
+          <div class="about-panel">
+            <h3>Lo que nos mueve</h3>
+            <ul>
+              <li>Diseno con actitud y estilo actual</li>
+              <li>Prendas pensadas para el uso diario</li>
+              <li>Combinaciones faciles y versatiles</li>
+              <li>Una marca cercana, moderna y con identidad</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <aside id="cart-panel" class="cart-panel" aria-hidden="true">
+    <div class="cart-panel-header">
+      <div>
+        <p class="eyebrow">Resumen</p>
+        <h2>Tu carrito</h2>
+      </div>
+      <button id="close-cart" class="icon-button" type="button" aria-label="Cerrar carrito">x</button>
+    </div>
+
+    <div id="cart-items" class="cart-items"></div>
+
+    <div class="cart-footer">
+      <div class="cart-total-line">
+        <span>Subtotal</span>
+        <strong id="cart-subtotal">$0.00</strong>
+      </div>
+      <div class="cart-total-line">
+        <span>Envio</span>
+        <strong id="cart-shipping">$0.00</strong>
+      </div>
+      <div class="cart-total-line total">
+        <span>Total</span>
+        <strong id="cart-total">$0.00</strong>
+      </div>
+      <button id="checkout-button" class="primary-button full-width" type="button">Finalizar compra</button>
+      <p class="mini-note">Demostracion funcional. Puedes conectar esta base a una base de datos o pasarela de pago despues.</p>
+    </div>
+  </aside>
+
+  <div id="overlay" class="overlay" hidden></div>
+
+  <template id="product-card-template">
+    <article class="product-card">
+      <div class="product-image">
+        <img class="product-photo" alt="" loading="lazy">
+      </div>
+      <div class="product-content">
+        <div class="product-meta">
+          <span class="pill product-category"></span>
+          <span class="product-style"></span>
+        </div>
+        <h3 class="product-name"></h3>
+        <p class="product-description"></p>
+        <div class="product-bottom">
+          <strong class="product-price"></strong>
+          <button class="primary-button add-to-cart" type="button">Agregar</button>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
